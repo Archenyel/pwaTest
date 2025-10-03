@@ -8,6 +8,10 @@ function App() {
   return (
     <>
       <div style={{ display: 'flex', minHeight: '100vh' }}>
+        {/* 
+         * SIDEBAR elemento estatico del appsshell
+         * Este menú lateral se mantiene siempre visible y es parte del shell estático
+         */}
         <aside style={{
           width: '250px',
           background: 'green',
@@ -70,6 +74,11 @@ function App() {
           <div className="App">
             <h1>Mi Universidad</h1>
             <h2>Materias:</h2>
+            
+            {/* 
+             * Contenido dinamico
+             * Se genera dinámicamente desde el JSON y puede cambiar
+             */}
             <ul>
               {Object.entries(materiasData).map(([id, materia]) => (
                 <li key={id}>{materia}</li>
@@ -79,6 +88,9 @@ function App() {
         </div>
       </div>
       
+      {/* 
+       * Footer elemento estatico que se mantiene en el app shell
+       */}
       <footer>
         <p>Universidad XYZ – 2025</p>
       </footer>
