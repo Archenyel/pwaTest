@@ -1,10 +1,18 @@
 const CACHE_NAME = 'app-v1';
+const APP_SHELL = [
+  '/',
+  '/manifest.json',
+  '/vite.svg',
+  '/src/main.jsx',
+  '/src/App.jsx',
+  '/src/prueba.json'
+];
 
 self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME)
       .then((cache) => {
-        return cache.addAll(['/']);
+        return cache.addAll(APP_SHELL);
       })
   );
 });
